@@ -9,6 +9,7 @@ public sealed class ApplicationDbContext : DbContext
     {
         //optionsBuilder.UseInMemoryDatabase("MyDb");
         optionsBuilder.UseSqlServer("Data Source=TANER\\SQLEXPRESS;Initial Catalog=ePersonelDb;Integrated Security=True;Connect Timeout=30;Encrypt=True;Trust Server Certificate=True;Application Intent=ReadWrite;Multi Subnet Failover=False");
+        //optionsBuilder.LogTo(Console.WriteLine, LogLevel.Information);
     }
 
     public DbSet<Personel> Personels { get; set; }

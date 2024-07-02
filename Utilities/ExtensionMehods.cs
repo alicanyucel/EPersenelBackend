@@ -1,4 +1,5 @@
-﻿using PersonelApp.WebAPI.Context;
+﻿using Microsoft.AspNetCore.OData;
+using PersonelApp.WebAPI.Context;
 using PersonelApp.WebAPI.Filters;
 using PersonelApp.WebAPI.Repositories;
 using PersonelApp.WebAPI.Services;
@@ -33,7 +34,10 @@ public static class ExtensionMehods
     {
         services.AddCors();
 
-        services.AddControllers();
+        services.AddControllers().AddOData(opt =>
+        {
+            opt.EnableQueryFeatures();
+        });
 
         services.AddMemoryCache();
 

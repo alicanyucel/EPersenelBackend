@@ -59,4 +59,9 @@ public sealed class PersonelService(
 
         return result;
     }
+
+    public IQueryable<Personel> GetAllQueryable()
+    {
+        return personelRepository.GetAll();
+    }
 }
